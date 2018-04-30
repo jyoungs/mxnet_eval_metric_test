@@ -12,7 +12,7 @@ RUN apt-get update \
 ##NOTE: In this step we install OpenBLAS. You can choose to install ATLAS or MKL
 
 RUN cd ~ \
-  && git clone --recursive https://github.com/apache/incubator-mxnet \
+  && git clone --branch 1.2.0.rc1 https://github.com/apache/incubator-mxnet \
   && cd ~/incubator-mxnet \
   && make -j $(nproc) USE_OPENCV=1 USE_BLAS=openblas
 
