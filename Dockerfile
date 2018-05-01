@@ -21,6 +21,6 @@ RUN cd ~/incubator-mxnet && make rpkg
 
 COPY . .
 
-RUN sed 's/array.layout=array.layout/array.layout=array.layout, eval.metric=mx.metric.rmse/g' < test.R > test_broken.R
+#RUN sed 's/array.layout=array.layout/array.layout=array.layout,/g' < test.R > test_broken.R
 
 CMD Rscript test.R && Rscript test_broken.R
